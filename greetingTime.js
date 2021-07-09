@@ -1,11 +1,12 @@
 function greetingMessage(time) {
     let greetingText;
-    if(time){
-        if (time > 0 && time < 12) {
+    const hour = parseInt(time.split(':')[0]);
+    if(hour){
+        if (hour > 0 && hour < 12) {
             greetingText = "Good Morning!"
-        } else if(time < 17) {
+        } else if(hour < 17) {
             greetingText = "Good Afternoon!"
-        } else if(time <= 24){
+        } else if(hour <= 24){
             greetingText = "Good night!"
         } else {
             greetingText = "Please enter a valid time!"
