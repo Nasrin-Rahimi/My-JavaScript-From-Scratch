@@ -19,3 +19,7 @@ function moveRigth() {
 document.addEventListener('keydown', function(e) {
     e.key === "ArrowLeft" ? moveLeft() : moveRigth()
 })
+
+//Read out the element's' coordinates
+//element.style.left; 
+//element.style.bottom;
