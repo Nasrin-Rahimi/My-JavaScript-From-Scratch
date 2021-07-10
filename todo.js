@@ -18,5 +18,17 @@ createTaskForm.addEventListener('submit', function(e){
 function addNewTask() {
     let task = document.createElement('li')
     task.textContent = newTaskDescription.value
+    let deleteBtn = document.createElement('bottun')
+    deleteBtn.textContent = "   X"
+    deleteBtn.style.color = "red"
+    task.appendChild(deleteBtn)
     tasks.appendChild(task)
+    deleteTask(deleteBtn, task)
+   
+}
+
+function deleteTask(deleteBtn, task) {
+    deleteBtn.addEventListener('click', function(e){
+        tasks.removeChild(task)
+    })
 }
