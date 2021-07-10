@@ -5,7 +5,7 @@ const tasks = document.getElementById('tasks')
 
 createTaskForm.addEventListener('submit', function(e){
     e.preventDefault()
-    message.textContent = ""
+    clearMessage()
    
     if (newTaskDescription.value) {
         if(!checkDuplication()){
@@ -43,6 +43,11 @@ function addNewTask() {
 
 function deleteTask(deleteBtn, task) {
     deleteBtn.addEventListener('click', function(e){
+        clearMessage()
         tasks.removeChild(task)
     })
+}
+
+function clearMessage(){
+    message.textContent = ""
 }
