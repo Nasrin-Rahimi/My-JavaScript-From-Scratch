@@ -1,11 +1,13 @@
 const createTaskForm = document.getElementById('create-task-form');
 const newTaskDescription = document.getElementById('new-task-description');
 let message = document.getElementById('message');
+const tasks = document.getElementById('tasks')
 
 createTaskForm.addEventListener('submit', function(e){
     e.preventDefault()
+    message.textContent = ""
    
-    if (newTaskDescription.textContent) {
+    if (newTaskDescription.value) {
         addNewTask()
     }
     else {
@@ -14,21 +16,7 @@ createTaskForm.addEventListener('submit', function(e){
 })
 
 function addNewTask() {
-    
+    let task = document.createElement('li')
+    task.textContent = newTaskDescription.value
+    tasks.appendChild(task)
 }
-
-
-
-
-
-
-
-// let form = document.getElementById('create-task-form');
-// form.addEventListener('submit', function (e) {
-//   e.preventDefault();
-//   let ul = document.getElementById('tasks');
-//   let li = document.createElement('li');
-//   let newTask = document.getElementById('new-task-description');
-//   li.innerText = newTask.value;
-//   ul.appendChild(li);
-// })
