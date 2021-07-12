@@ -2,7 +2,7 @@ let counter = document.getElementById('counter')
 const pause = document.getElementById('pause')
 const minus = document.getElementById('minus')
 const plus = document.getElementById('plus')
-let intervalVar;
+let timer;
 
 document.addEventListener('DOMContentLoaded', startCounter)
 pause.addEventListener('click', pauseCounter)
@@ -10,23 +10,21 @@ minus.addEventListener('click', decreaseCounter)
 plus.addEventListener('click', increaseCounter)
 
 function startCounter(){
-    let i = parseInt(counter.innerHTML, 10)
-    intervalVar = setInterval(() => {
-        i++;
-        counter.innerHTML = i.toString();
+    timer = setInterval(() => {
+        counter.innerHTML = parseInt(counter.innerHTML, 10) + 1;
     }, 1000);
 }
 
 function pauseCounter(){
-    clearInterval(intervalVar)
+    clearInterval(timer)
 }
 
 function decreaseCounter() {
-    counter.innerHTML = (parseInt(counter.innerHTML, 10) - 1).toString();
+    counter.innerHTML = parseInt(counter.innerHTML, 10) - 1;
 }
 
 function increaseCounter() {
-    counter.innerHTML = (parseInt(counter.innerHTML, 10) + 1).toString();
+    counter.innerHTML = parseInt(counter.innerHTML, 10) + 1;
 }
 
 
