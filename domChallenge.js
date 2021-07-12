@@ -7,6 +7,7 @@ let intervalVar;
 document.addEventListener('DOMContentLoaded', startCounter)
 pause.addEventListener('click', pauseCounter)
 minus.addEventListener('click', decreaseCounter)
+plus.addEventListener('click', increaseCounter)
 
 function startCounter(){
     let i = parseInt(counter.innerHTML, 10)
@@ -22,6 +23,10 @@ function pauseCounter(){
 
 function decreaseCounter() {
     counter.innerHTML = (parseInt(counter.innerHTML, 10) - 1).toString();
+}
+
+function increaseCounter() {
+    counter.innerHTML = (parseInt(counter.innerHTML, 10) + 1).toString();
 }
 
 
