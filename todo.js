@@ -51,3 +51,9 @@ function deleteTask(deleteBtn, task) {
 function clearMessage(){
     message.textContent = ""
 }
+
+//add :
+// A priority value selected from a dropdown that is used to determine the color of the text in the list (e.g. red for high priority, yellow for medium, green for low)
+// As a challenge, implement a sorting functionality that displays the tasks ascending or descending order based on priority
+// An additional input field (e.g. user, duration, date due)
+// Ability to edit tasks
