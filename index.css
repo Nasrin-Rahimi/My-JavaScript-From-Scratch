@@ -67,5 +67,11 @@ body {
     border-radius: 5px;
     box-shadow: 2px 5px 5px #333;
   }
+  #counter {
+    background-color: black;
+    color: white;
+    display: table;
+    padding: 10px;
+  }
   
   
