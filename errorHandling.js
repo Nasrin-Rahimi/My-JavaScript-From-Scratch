@@ -5,7 +5,11 @@ const message = document.getElementById('message')
 submitBtn.addEventListener('click', checkInput)
 
 function checkInput() {
-    if(input.value < 5) {
-        message.innerText = "Input is too small!"
+    message.innerText = ""
+    try { if(input.value < 5) {
+        throw 'Input is too small!'
+    }
+    } catch(error) {
+        message.innerText = error
     }
 }
