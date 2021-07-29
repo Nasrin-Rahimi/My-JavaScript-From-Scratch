@@ -41,6 +41,7 @@ body {
   }
   #message {
     color: red;
+    font-size: medium;
   }
   button {
     font-size: 14px;
