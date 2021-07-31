@@ -30,17 +30,25 @@ function binarySearch(string, letter) {
     while(startPoint != endPoint) {
         if(string[guessPosition] < letter){
             startPoint = guessPosition
-            guessPosition = parseInt((endPoint - startPoint)/2)
+            guessPosition = startPoint + Math.round((endPoint - startPoint)/2)
             console.log(`startPoint is ${startPoint} endPoint is ${endPoint} and geussPosition is ${guessPosition}`)
         } else if(string[guessPosition] > letter){
             endPoint = guessPosition
-            guessPosition = parseInt((endPoint - startPoint)/2)
+            guessPosition = startPoint + parseInt((endPoint - startPoint)/2)
             console.log(`startPoint is ${startPoint} endPoint is ${endPoint} and geussPosition is ${guessPosition}`)
         }
         else {
             console.log('just right')
             return true
         }
+    }
+
+    if(string === lette){
+        return true
+    }
+    else {
+        console.log('Sorry')
+        return false
     }
     
 }
