@@ -20,3 +20,27 @@ function stringIncludes(sentence, letter){
 
 //if the letter doesn't exist in sentence, it takes n + 3 times for searching letter in sentence
 //n is sentence.length. we call time copmlexity of stringIncludes function is n + 3
+
+function binarySearch(string, letter) {
+    let startPoint = 0;
+    let endPoint = string.length - 1;
+    let guessPosition = parseInt((endPoint - startPoint)/2);
+    console.log(`In ${string} startPoint is ${startPoint} endPoint is ${endPoint} and geussPosition is ${guessPosition}`)
+
+    while(startPoint != endPoint) {
+        if(string[guessPosition] < letter){
+            startPoint = guessPosition
+            guessPosition = parseInt((endPoint - startPoint)/2)
+            console.log(`startPoint is ${startPoint} endPoint is ${endPoint} and geussPosition is ${guessPosition}`)
+        } else if(string[guessPosition] > letter){
+            endPoint = guessPosition
+            guessPosition = parseInt((endPoint - startPoint)/2)
+            console.log(`startPoint is ${startPoint} endPoint is ${endPoint} and geussPosition is ${guessPosition}`)
+        }
+        else {
+            console.log('just right')
+            return true
+        }
+    }
+    
+}
