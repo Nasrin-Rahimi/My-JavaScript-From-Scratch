@@ -8,4 +8,15 @@ function sayDownFrom(n) {
     }
 }
 
+function sumOfTo(n) {
+    if (n > 1){
+        return sumOfTo(n - 1) + n
+    } else {
+        return 1
+    }
+}
+
 sayDownFrom(5)
+
+let sum = sumOfTo(5)
+console.log(`Sum of 1 to 5 is: ${sum}`)
