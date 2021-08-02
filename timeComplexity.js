@@ -43,7 +43,7 @@ function binarySearch(string, letter) {
         }
     }
 
-    if(string === lette){
+    if(string === letter){
         return true
     }
     else {
