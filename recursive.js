@@ -16,6 +16,16 @@ function sumOfTo(n) {
     }
 }
 
+function reverseString(string) {
+    if(string.length > 1) {
+        return string[string.length - 1] + reverseString(string.substring(0, string.length - 1))
+    }
+    else
+    {
+        return string
+    }
+}
+
 sayDownFrom(5)
 
 let sum = sumOfTo(5)
