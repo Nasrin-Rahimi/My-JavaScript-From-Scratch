@@ -15,3 +15,13 @@ function findAndRemoveMin(array) {
     array.splice(minIndex, 1);
     return min;
 }
+
+function selectionSort(array){
+    let newMin;
+    let sortedArray = [];
+    while(array.length != 0) {
+        newMin = findAndRemoveMin(array);
+        sortedArray.push(newMin);
+    }
+    return sortedArray;
+}
