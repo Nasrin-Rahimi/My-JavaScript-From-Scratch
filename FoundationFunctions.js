@@ -99,5 +99,39 @@ function array123(nums) {
     return result;
 }
 
+//How to convert a number into array in JavaScript
+
+var num = 25431
+
+// Here we typecasting the num
+// Splitting the num, so that
+// we got an array of strings
+// Then use map function to
+// convert the array of strings
+// into array of numbers
+var myArr = String(num).split('').map((num) => {
+    return Number(num)
+})
+
+//console.log(myArr)
+
+var subtractProductAndSum = function(n) {
+    
+    const nArray = String(n).split('').map((n) => {
+        return Number(n)
+    })
+    let product = 1;
+    let sum = 0;
+   
+    for (let i = 0; i < nArray.length; i++) {
+        product  *= nArray[i]
+        sum += nArray[i]
+    }
+    console.log(product)
+    console.log(sum)
+    return product - sum
+    
+};
+
 
 
