@@ -5,3 +5,5 @@ function saturdayFun(activity = 'roller-skate') {
 let mondayWork = function(activity = 'go to the office') {
     console.log(`This Monday, I will ${activity}`)
 }
+
+let r = (function(baseNumber){ return baseNumber + 6 })(2)
