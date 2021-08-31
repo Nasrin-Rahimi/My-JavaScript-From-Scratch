@@ -134,6 +134,19 @@ class LinkedList {
 
         console.log(list);
     }
+
+    reverseList() {
+        let current = this.head;
+        let prev , tmp;
+        
+        while(current) {
+            tmp = current.next;
+            current.next = prev;
+            prev = current;
+            current = tmp;
+        }
+        //return prev;
+    }
 }
 
 //Create an object for the linked list
@@ -153,6 +166,8 @@ linkedList.add(20);
 linkedList.add(30);
 linkedList.add(40);
 linkedList.add(50);
+linkedList.insertAt(25, 3);
+
 
 linkedList.printList();
 
@@ -167,6 +182,8 @@ console.log("is List Empty ? " + linkedList.isEmpty());
 console.log(linkedList.removeFrom(3));
 
 linkedList.printList();
+
+
 
 
 
