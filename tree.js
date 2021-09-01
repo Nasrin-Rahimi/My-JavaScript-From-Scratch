@@ -10,6 +10,8 @@ class treeNode{
 class BinarySearchTree{
     constructor(){
         this.root = null;
+        this.min = 0;
+        this.max = 0;
     }
 
     insert(value){
@@ -134,22 +136,86 @@ class BinarySearchTree{
         }
     }
 
+    height(node){
+        if(node === null || (node.left === null && node.right === null)) {
+            return 0;
+        }
+        else {
+            let lDegth = this.height(node.left);
+            let rDegth = this.height(node.right);
+
+            if(lDegth > rDegth){
+                return lDegth + 1;
+            }
+            else {
+                return rDegth + 1;
+            }
+        }
+    }
+
+    //find min and max distances with respect to root.
+    findMinMax(node, hd) {
+        // Base case
+        if (node == null) {
+            return;
+        }
+
+        if (hd < this.min) {
+            this.min = hd;
+        }
+        else if (hd > this.max) {
+            this.max = hd;
+        }
+
+        this.findMinMax(node.left, hd - 1);
+        this.findMinMax(node.right, hd + 1);
+    }
+
+    printVerticalLine(node, lineNo, hd) {
+        if (node == null) {
+            return;
+        }
+        if (lineNo == hd) {
+            document.write(node.data, " ");
+        }
+
+        // Recur for left and right subtrees
+        this.printVerticalLine(node.left, lineNo, hd - 1);
+        this.printVerticalLine(node.right, lineNo, hd + 1);
+
+    }
+
+    // The main function that prints a given binary tree in vertical order
+    verticalOrder(node) {
+        this.findMinMax(node, 0);
+        // Iterate through all possible vertical lines starting
+        // from the leftmost line and print nodes line by line
+        for (let lineNo = this.min; lineNo <= this.max; lineNo++) {
+            this.printVerticalLine(node, lineNo, 0);
+            document.write("</br>");
+        }
+    }
+
+    topView(node) {
+
+    }
+
 }
 
 // create an object for the BinarySearchTree
 let BST = new BinarySearchTree();
   
 // Inserting nodes to the BinarySearchTree
-BST.insert(15);
-BST.insert(25);
-BST.insert(10);
-BST.insert(7);
-BST.insert(22);
-BST.insert(17);
-BST.insert(13);
-BST.insert(5);
-BST.insert(9);
-BST.insert(27);
+ BST.insert(15);
+ BST.insert(25);
+ BST.insert(10);
+ BST.insert(7);
+ BST.insert(22);
+ BST.insert(17);
+ BST.insert(13);
+ BST.insert(5);
+ BST.insert(9);
+ BST.insert(27);
                           
 //          15
 //         /  \
@@ -160,6 +226,11 @@ BST.insert(27);
 //    5   9  17 
   
 let root = BST.getRootNode();
+
+console.log("the heilght of BST is: " , BST.height(root));
+
+document.write("Vertical order traversal is :" + "</br>");
+BST.verticalOrder(root);
               
 // prints 5 7 9 10 13 15 17 22 25 27
 
