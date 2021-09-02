@@ -184,7 +184,7 @@ class BinarySearchTree{
         this.printVerticalLine(node.right, lineNo, hd + 1);
 
     }
-
+    //https://www.geeksforgeeks.org/print-binary-tree-vertical-order/
     // The main function that prints a given binary tree in vertical order
     verticalOrder(node) {
         this.findMinMax(node, 0);
