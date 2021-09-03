@@ -18,7 +18,8 @@ function stringIncludes(sentence, letter){
     return !!matches //5
 }
 
-//if the letter doesn't exist in sentence, it takes n + 3 times for searching letter in sentence
+//if the letter doesn't exist in sentence, it takes n + 3 times for searching 
+//letter in sentence
 //n is sentence.length. we call time copmlexity of stringIncludes function is n + 3
 
 function binarySearch(string, letter) {

@@ -16,6 +16,7 @@ function findAndRemoveMin(array) {
     return min;
 }
 
+//O(n2)
 function selectionSort(array){
     let newMin;
     let sortedArray = [];
