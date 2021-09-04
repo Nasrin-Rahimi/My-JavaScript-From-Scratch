@@ -47,29 +47,63 @@ class Queue {
 
 //use the queue class 
 
-let queue = new Queue();
+// let queue = new Queue();
 
-console.log("Is queue empty?", queue.isEmpty());
+// console.log("Is queue empty?", queue.isEmpty());
 
-// Adding elements to the queue
-// queue contains [10, 20, 30, 40, 50]
-queue.enqueue(10);
-queue.enqueue(20);
-queue.enqueue(30);
-queue.enqueue(40);
-queue.enqueue(50);
-queue.enqueue(60);
+// // Adding elements to the queue
+// // queue contains [10, 20, 30, 40, 50]
+// queue.enqueue(10);
+// queue.enqueue(20);
+// queue.enqueue(30);
+// queue.enqueue(40);
+// queue.enqueue(50);
+// queue.enqueue(60);
 
-console.log("The first element is: ", queue.getElement());
+// console.log("The first element is: ", queue.getElement());
 
-console.log(queue.printQueue());
+// console.log(queue.printQueue());
 
-console.log("Remove from the front of the queue", queue.dequeue());
+// console.log("Remove from the front of the queue", queue.dequeue());
 
-console.log(queue.printQueue());
+// console.log(queue.printQueue());
 
-queue.enqueue(70);
+// queue.enqueue(70);
 
-console.log("queue after adding 70 to it is: ", queue.printQueue());
+// console.log("queue after adding 70 to it is: ", queue.printQueue());
+
+//Create stack with two queues
+
+let q1 = new Queue();
+let q2 = new Queue();
+
+// let top;
+
+function push(element){
+    q1.enqueue(element);
+    // top = element;  
+}
+
+function pop() {
+    let output;
+    while(q1.items.length > 1) {
+        q2.enqueue(q1.dequeue());
+    }
+    output = q1.dequeue();
+    q1.items = q2.items.slice();
+   
+    //console.log(q1);
+    return output;
+}
+
+push(10);
+push(20);
+push(30);
+console.log("The stack has: ", q1.printQueue());
+
+pop();
+
+console.log("The stack after removing the top element has: ", q1.printQueue());
+
 
 
