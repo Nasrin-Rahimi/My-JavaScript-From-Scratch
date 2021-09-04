@@ -2,7 +2,7 @@
 
 class Queue {
     constructor() {
-        this.items = [];
+       this.items = [];
     }
 
     //Adds an element to the end of the queue
@@ -12,15 +12,15 @@ class Queue {
 
     //removes an element from the front of a queue 
     dequeue(){
-        if(this.isEmpty()) {
-            return 'Underflow';
-        }
-        return this.items.shift();
+       if (this.isEmpty()) {
+           return 'Underflow';
+       }
+       return this.items.shift();
     }
 
     //get element from the front of the queue.
     getElement() {
-        if(this.isEmpty()) {
+        if (this.isEmpty()) {
             return 'Queue is empty';
         }
         return this.items[0];
@@ -34,13 +34,13 @@ class Queue {
     }
 
     printQueue() {
-        var output = "";
+       let output = "";
 
-        for(let i = 0; i < this.items.length; i++) {
-            output += this.items[i] + " ";
-        }
+       for(let i = 0;i < this.items.length; i++) {
+           output += this.items[i] + " ";
+       }
 
-        return output;
+       return output;
     }
 
 }
