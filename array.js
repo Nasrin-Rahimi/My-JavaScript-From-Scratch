@@ -126,4 +126,39 @@ var sortArrayByParity = function(nums) {
     return sortArray;
 };
 
+//Binary Search
+function binarySearchRecursive(arr, x, left, right) {
+    if(left > right) {
+        return false;
+    }
+    let mid = parseInt((right + left) / 2);
+    if(arr[mid] == x) {
+        return true;
+    } else if (x < arr[mid]) {
+        return binarySearchRecursive(arr, x, left, mid - 1);
+    } else {
+        return binarySearchRecursive(arr, x, mid + 1, right);
+    }
+
+}
+
+function binarySearchIterative(arr, x) {
+    let left = 0;
+    let rigth = arr.length - 1;
+    
+    while (left <= rigth) {
+        let mid = parseInt((left + rigth) / 2);
+        //or mid = parseInt(left + ((rigth - left) / 2));
+
+        if(x == arr[mid]) {
+            return true;
+        } else if(x < arr[mid]) {
+            rigth = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return false;
+}
+
 
