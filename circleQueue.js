@@ -56,6 +56,12 @@ class MyCircularQueue {
     isEmpty() {
         return this.head == -1;
     }
+
+    //Checks whether the circular queue is full or not.
+    isFull() {
+        return ((this.tail + 1) % this.size) == this.head;
+    }
+
 }
 
 
