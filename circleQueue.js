@@ -53,7 +53,9 @@ class MyCircularQueue {
         this.items[this.tail];
     }
 
-    
+    isEmpty() {
+        return this.head == -1;
+    }
 }
 
 
