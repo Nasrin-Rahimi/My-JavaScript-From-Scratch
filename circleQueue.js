@@ -45,6 +45,14 @@ class MyCircularQueue {
         this.items[this.head];
     }
 
+    //Get the last item from the queue. 
+    rear() {
+        if(this.isEmpty()) {
+            return -1;
+        }
+        this.items[this.tail];
+    }
+
     
 }
 
