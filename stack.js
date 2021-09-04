@@ -36,3 +36,21 @@ class Stack{
         return output;
     }
 }
+
+//use Stack
+let stack = new Stack();
+
+console.log("Is stack empty", stack.isEmpty()); 
+
+// Adding element to the stack
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
+console.log(stack.printStack());
+
+console.log("The top element is: ", stack.getElement());
+
+stack.pop();
+
+console.log("Stack after remove the last element is: ", stack.printStack());
