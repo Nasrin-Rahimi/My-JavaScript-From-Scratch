@@ -161,4 +161,10 @@ function binarySearchIterative(arr, x) {
     return false;
 }
 
+//define an array using array literal
+let myArray = [10, 20, 30];
+//define an array using array constructor
+
+let myArray2 = new Array(10, 20, 30);
+
 

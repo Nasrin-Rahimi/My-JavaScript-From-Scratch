@@ -33,6 +33,7 @@ class MyCircularQueue {
             this.tail = -1;
             return true;
         }
+        //this.items.slice(this.head, 1);
         this.head = (this.head + 1) % this.size;
         return true;
     }
@@ -64,12 +65,20 @@ class MyCircularQueue {
 
 }
 
+// let myQueue = new MyCircularQueue(5);
 
+
+/**
+ * @param {number} k
+ */
+
+
+// let obj = new MyCircularQueue(k);
 
 // var MyCircularQueue = function(k) {
-//     this.qSize = k;
-//     this.front = 0;
-//     this.rear = 0;
+//     this.size = k;
+//     this.front = -1;
+//     this.rear = -1;
 //     this.items = new Array(k);
 // };
 
@@ -78,11 +87,14 @@ class MyCircularQueue {
 //  * @return {boolean}
 //  */
 // MyCircularQueue.prototype.enQueue = function(value) {
-//     if (this.isFull()){
+//     if(this.isFull()) {
 //         return false;
 //     }
-//     this.items.push(value);
-//     this.rear++;
+//    if(this.isEmpty()) {
+//        this.front = 0;
+//    }
+//     this.rear = (this.rear + 1) % this.size;
+//     this.items[this.rear] = value;
 //     return true;
 // };
 
@@ -93,11 +105,13 @@ class MyCircularQueue {
 //     if(this.isEmpty()){
 //         return false;
 //     }
-//     else{
-//         this.items.shift();
-//         this.front++;
+//     if(this.front == this.rear) {
+//         this.front = -1;
+//         this.rear = -1;
 //         return true;
 //     }
+//     this.front = (this.front + 1) % this.size;
+//     return true;
 // };
 
 // /**
@@ -124,17 +138,14 @@ class MyCircularQueue {
 //  * @return {boolean}
 //  */
 // MyCircularQueue.prototype.isEmpty = function() {
-//     return this.items.length == 0;
+//     return this.front == -1;
 // };
 
 // /**
 //  * @return {boolean}
 //  */
 // MyCircularQueue.prototype.isFull = function() {
-//     if(this.front == 0 && this.rear == this.items.length - 1) {
-//         return true;
-//     }
-//     return false;
+//     return ((this.rear + 1) % this.size) == this.front;
 // };
 
 // /** 
@@ -147,3 +158,5 @@ class MyCircularQueue {
 //  * var param_5 = obj.isEmpty()
 //  * var param_6 = obj.isFull()
 //  */
+
+
